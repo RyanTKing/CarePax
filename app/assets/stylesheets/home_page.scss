@@ -1,3 +1,16 @@
 // Place all the styles related to the HomePage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#welcome{
+	h1{
+		font: Helvetica
+		color: #47A3FF
+	}
+}
+
+#bgMap{
+	width: 500px;
+    height: 400px;
+    background-color: #CCC;
+}
