@@ -1,2 +1,28 @@
-<h1>HomePage#home</h1>
-<p>Find me in app/views/home_page/home.html.erb</p>
+<!doctype html>
+<html class="no-js" lang="en">
+        <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>CarePax</title>
+                <link rel="stylesheet" href="stylesheets/app.css" />
+                <link rel="stylesheet" href="stylesheets/styles.css" />
+                <script src="bower_components/modernizr/modernizr.js"></script>
+        </head>
+        <body>
+                <div id="bgMap"></div>
+                <script type="text/javascript">
+                        var bgMap;
+                        function initMap() {
+                                bgMap = new google.maps.Map(document.getElementById('bgMap'), {
+                                        center: {lat: 42.35, lng: -71.108},
+                                        zoom: 16
+                                });
+                        }
+                </script>
+                <script async defer
+                         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK15fSJUAnCidloXH9XwR9TV73ukZsyvI&callback=initMap">
+                </script>
+                <script src="bower_components/jquery/dist/jquery.min.js"></script>
+                <script src="bower_components/foundation/js/foundation.min.js"></script>
+                <script src="js/app.js"></script>
+        </body>
