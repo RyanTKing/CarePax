@@ -1,3 +1,41 @@
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+<div id="home-container">
+  <nav id="main-nav">
+    <ul>
+      <li><a href="">About</a></li>
+      <li><a href="">Order</a></li>
+      <li><a href="">Pricing</a></li>
+      <li><a href="">Become a Driver</a></li>
+    </ul>
+    <a id="login-btn" href="">login</a>
+  </nav>
+  <div id="info-container">
+    <h1>No pickup. No waiting. No hassle.</h1>
+    <a id="order-btn" href="">get your first order for 50% off</a>
+  </div>
 </div>
+<div id="map-container">
+  <div id="map"></div>
+</div>
+
+<script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({
+        provider: {
+            zoom: 18,
+            disableDefaultUI: true
+        },
+        internal: {
+            id: 'map'
+        } }, function() {
+            if (navigator.geolocation)
+                navigator.geolocation.getCurrentPosition(displayOnMap);
+        });
+
+        function displayOnMap(position) {
+            var marker = handler.addMarker({
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            });
+            handler.map.centerOn(marker);
+        };
+</script>
