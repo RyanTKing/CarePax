@@ -27,10 +27,10 @@ div#home-container {
   left: 0;
   right: 0;
   bottom: 0;
-  background: -webkit-linear-gradient($main-navy 7em, rgba($main-navy, 0), $main-navy);
-  background: -o-linear-gradient($main-navy 7em, rgba($main-navy, 0), $main-navy);
-  background: -moz-linear-gradient($main-navy 7em, rgba($main-navy, 0), $main-navy);
-  background: linear-gradient($main-navy 7em, rgba($main-navy, 0), $main-navy);
+  background: -webkit-linear-gradient($main-navy 7em, rgba($main-navy, 0.2), $main-navy);
+  background: -o-linear-gradient($main-navy 7em, rgba($main-navy, 0.2), $main-navy);
+  background: -moz-linear-gradient($main-navy 7em, rgba($main-navy, 0.2), $main-navy);
+  background: linear-gradient($main-navy 7em, rgba($main-navy, 0.2), $main-navy);
 
   nav#main-nav {
     width: 75%;
