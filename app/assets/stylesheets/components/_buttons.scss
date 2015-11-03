@@ -1,0 +1,11 @@
+.button-light {
+	@include button($light)
+}
+
+.button-light-lg {
+	@include button($light, 1.125em);
+}
+
+.button-light-xlg {
+	@include button($light, 1.25em);
+}

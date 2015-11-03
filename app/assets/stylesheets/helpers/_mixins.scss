@@ -1,0 +1,94 @@
+@mixin fill-page($margin: 0) {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	margin: $margin;
+}
+
+@mixin button($color, $font-size: 1em) {
+    padding: 1em 1.5em;
+
+    color: $color;
+    border: 0.125em solid $color;
+    background-color: rgba($color, 0);
+
+    font: 700 $font-size $serif;
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+
+    @include border-radius(0.25em);
+    @include single-transition(background-color, 250ms);
+
+    &:hover {
+        background-color: rgba($color, 0.6);
+    }
+}
+
+@mixin linear-gradient($gradient) {
+    background: -webkit-linear-gradient($gradient);
+    background: -o-linear-gradient($gradient);
+    background: -moz-linear-gradient($gradient);
+    background: linear-gradient($gradient);
+}
+
+@mixin hcenter($offset: 0) {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50% + $offset));
+}
+
+@mixin vcenter($offset: 0) {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50% + $offset));
+}
+
+@mixin center($xoff: 0, $yoff: 0) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50% + $xoff, -50% + $yoff));
+}
+
+@mixin position($location, $xoff: 0, $yoff: 0) {
+    position: absolute;
+
+    @if $location == 'top-left' {
+        position: absolute;
+        top: $yoff;
+        left: $xoff;;
+    } @else if $location == 'top-center' {
+        @include hcenter($xoff);
+        top: $yoff;
+    } @else if $location == 'top-right' {
+        position: absolute;
+        top: $yoff;
+        right: $xoff;
+    } @else if $location == 'center-left' {
+        @include vcenter($yoff);
+        left: $xoff;
+	} @else if $location == 'center-center' {
+		@include center($xoff, $yoff);
+	} @else if $location == 'center-right' {
+		@include vcenter($yoff);
+		right: $xoff;
+	} @else if $location == 'bottom-left' {
+		position: absolute;
+		left: $xoff;
+		bottom: $yoff;
+	} @else if $location == 'bottom-center' {
+		@include hcenter($xoff);
+		bottom: $yoff;
+	} @else if $location == 'bottom-right' {
+		position: absolute;
+		right: $xoff;
+		bottom: $yoff;
+	}
+
+}
