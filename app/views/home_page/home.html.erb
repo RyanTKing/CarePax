@@ -12,7 +12,7 @@
         <h1>No pickup. No waiting. No hassle.</h1>
         <a class="button-light-xlg" href="">get your first order for 50% off</a>
     </div>
-    <div id = "login-form" style = "visibility: hidden">
+    <div id = "login-form">
         <form name="f1" method="post" action="" id="f1">
             <table>
                 <tr>
@@ -20,7 +20,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="f1_label">Password  :</td><td><input type="password" name="password" value=""  />
+                    <td class="f1_label">Password:</td><td><input type="password" name="password" value=""  />
                     </td>
                 </tr>
                 <tr>
@@ -32,6 +32,17 @@
         </form> 
     </div>
 </div>
+
+<script>
+    $( document ).ready(function() {
+        $("#login-form").hide(e);
+        $("#login-button").click(function(){
+            e.preventDefault();
+            $("login-form").toggle();
+        });
+    });
+</script>
+
 <div id="map-container">
     <div id="map"></div>
 </div>
