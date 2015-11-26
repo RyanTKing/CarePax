@@ -5,10 +5,11 @@ body.home_page {
 		@include fill-page();
 		@include linear-gradient(($main 7em, rgba($main, 0.2), $main));
 
-		nav.main-nav a#login-button {
-			float: right;
-			margin: 1em 6em 1em 0;
-		}
+    div#login-form {
+        display: inline-block;
+        right: 2em;
+        top: 5em;
+    }
 
 		div#info-container {
 			@include position('center-center', 0, -10%);

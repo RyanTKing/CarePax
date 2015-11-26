@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore-min
-//= require gmaps/google
 //= require typekit
 //= require_tree .

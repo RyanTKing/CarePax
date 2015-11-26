@@ -1,39 +1,54 @@
 <div id="home-container">
     <nav class="main-nav">
-        <ul>
+        <ul class="page-nav">
             <li><a href="">About</a></li>
             <li><a href="">Order</a></li>
             <li><a href="">Pricing</a></li>
             <li><a href="">Become a Driver</a></li>
         </ul>
-        <a id="login-button" class="button-light" href="">login</a>
+        <ul class="login-register">
+            <li><a id="login-button" href="">Login</a></li>
+            <li><a href="">Register</a></li>
+        </ul>
     </nav>
     <div id="info-container">
         <h1>No pickup. No waiting. No hassle.</h1>
         <a class="button-light-xlg" href="">get your first order for 50% off</a>
     </div>
-    <div id = "login-form">
-        <form name="f1" method="post" action="" id="f1">
-            <input type="text" name="username" value=""/>
-            <input type="password" name="password" value=""/>
-            <input type="submit" name="login" value="Log In"/>
-        </form> 
-    </div>
 </div>
-
-<script>
-    $( document ).ready(function() {
-        $("#login-form").hide();
-        $("#login-button").click(function(e){
-            e.preventDefault();
-            $("#login-form").toggle();
-        });
-    });
-</script>
 
 <div id="map-container">
     <div id="map"></div>
 </div>
+
+<div id="login-form">
+    <form name="f1" method="post" action="" id="f1">
+        <div class="text-input user-name">
+            <i class="fa fa-user">
+            </i><input type="text" name="username" value="" placeholder="Email"/>
+        </div>
+        <div class="text-input password">
+            <i class="fa fa-key"></i>
+            <input name="password" type="password" placeholder="Password">
+            <button type="submit" name="login" value="" class="login-button">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#login-form").hide();
+        $("#login-button").click(function(e){
+            e.preventDefault();
+            $("#login-form").show();
+            $("#home-container").addClass("blurred");
+            $("#map-container").addClass("blurred");
+        });
+    });
+</script>
+
 
 <script type="text/javascript">
     var mapStyle = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#193341"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#3e606f"},{"weight":2},{"gamma":0.84}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#1a3541"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]}];
