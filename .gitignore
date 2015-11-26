@@ -22,4 +22,4 @@
 !.elasticbeanstalk/*.global.yml
 
 # IdeaJ Files
-.idea
+.idea/
