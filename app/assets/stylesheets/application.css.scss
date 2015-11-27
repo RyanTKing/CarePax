@@ -1,19 +1,25 @@
-/* Import Compass */
-@import "compass";
+/*
+ *= require_self
+ */
 
-/* Import Helpers */
+/* Libraries */
+@import "compass";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Helpers (Variables, mixins, etc.) */
 @import "helpers/variables";
 @import "helpers/mixins";
 
-/* Import Base */
+/* Base configuration */
 @import "base/reset";
-@import "base/typography";
 @import "base/global";
+@import "base/typography";
 
-/* Import Components */
+/* Individual Components */
 @import "components/buttons";
-@import "components/navigation";
 @import "components/forms";
+@import "components/navigation";
 
-/* Import Individual Pages */
+/* Page Configuration */
 @import "pages/home_page";
