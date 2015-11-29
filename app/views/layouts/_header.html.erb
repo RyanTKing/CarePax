@@ -1,26 +1,11 @@
-		<nav class="main-nav">
-		        <ul>
-		            <li><%= link_to "Home", "/home_page/home" %></li>
-		            <li><%= link_to "about", "/home_page/about" %></li>
-		            <li><%= link_to "Order", root_path %></li>
-		            <li><%= link_to "Pricing", root_path %></li>
-		            <li><%= link_to "Become a Driver", root_path %></li>
-		        </ul>
-		        <a id="login-button" class="button-light" href="">login</a>
-		</nav>
-		<div id = "login-form">
-	        <form name="f1" method="post" action="" id="f1">
-	            <input type="text" name="username" value=""/>
-	            <input type="password" name="password" value=""/>
-	            <input type="submit" name="login" value="Log In"/>
-	        </form>
-		</div>
-		<script>
-		    $( document ).ready(function() {
-		        $("#login-form").hide();
-		        $("#login-button").click(function(e){
-		            e.preventDefault();
-		            $("#login-form").toggle();
-		        });
-		    });
-		</script>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to 'care pax', root_path, id: 'logo'%>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to 'About', about_path %></li>
+      <li><%= link_to 'Order', '#' %></li>
+      <li><%= link_to 'Help', '#' %></li>
+      <li><%= link_to 'Log in', '#' %></li>
+    </ul>
+  </div>
+</header>

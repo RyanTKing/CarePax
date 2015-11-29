@@ -1,4 +1,4 @@
-body.home_page {
+body {
 	background-color: $main;
 
 	div#home-container {
@@ -6,7 +6,7 @@ body.home_page {
 		@include linear-gradient(($main 7em, rgba($main, 0.2), $main));
 
     div#login-form {
-        display: inline-block;
+        display: none;
         right: 2em;
         top: 5em;
     }
