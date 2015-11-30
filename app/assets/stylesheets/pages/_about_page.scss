@@ -1,0 +1,10 @@
+div#about-container {
+  padding-top: 8em;
+  img {
+    min-width: 8em;
+    min-height: 8em;
+    max-width: 12em;
+    max-width: 12em;
+    clip: rect(0, 8em, 8em, 0)
+  }
+}

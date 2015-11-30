@@ -1,29 +1,61 @@
 <% provide(:title, 'About') %>
-<div class="container">
+<div id="about-container" class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h1>About CarePax</h1>
-      <p>CarePax is an elegant solution crafted around a simple idea; to make convenience products truly convenient. Our products are inventoried in our drivers' cars, and are drivin throughout the city 24/7. Simply log on to our platform to see all available drivers near you, and request a product in their inventory. Thats it! Within minutes the driver will show up at your door with the products you need. </p>
+
+      <p>CarePax is an elegant solution crafted around a simple idea; to make convenience products truly convenient. Our
+        products are inventoried in our drivers' cars, and are drivin throughout the city 24/7. Simply log on to our
+        platform to see all available drivers near you, and request a product in their inventory. Thats it! Within
+        minutes the driver will show up at your door with the products you need. </p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h1>Meet the team</h1>
-      <div>
-        <%= image_tag("Ryan.jpg") %>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2">
+        <%= image_tag("Ryan.jpg", class: 'pull-left img-rounded') %>
         <h2>Ryan King</h2>
+        <small>Class: 2018</small>
+        <small>Favorite Website: ClickHole</small>
       </div>
-      <div>
-        <%= image_tag("David.jpg") %>
+      <div class="col-md-6">
+        <p>Brief bio!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2">
+        <%= image_tag("David.jpg", class: 'pull-left img-rounded') %>
         <h2>David Monti</h2>
+        <small>Class: 2017</small>
+        <small>Favorite Website:</small>
       </div>
-      <div>
-        <%= image_tag("Brent.jpg") %>
-        <h2>Brent Zhang</h2>
+      <div class="col-md-6">
+        <p>Brief bio!</p>
       </div>
-      <div>
-        <%= image_tag("Kevin.jpg") %>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2">
+        <%= image_tag("Kevin.jpg", class: 'pull-left img-rounded') %>
         <h2>Kevin Leung</h2>
+        <small>Class: 2017</small>
+        <small>Favorite Website:</small>
+      </div>
+      <div class="col-md-6">
+        <p>Brief bio!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2">
+        <%= image_tag("Brent.jpg", class: 'pull-left img-rounded') %>
+        <h2>Ryan King</h2>
+        <small>Class: 2017</small>
+        <small>Favorite Website:</small>
+      </div>
+      <div class="col-md-6">
+        <p>Brief bio!</p>
       </div>
     </div>
   </div>
