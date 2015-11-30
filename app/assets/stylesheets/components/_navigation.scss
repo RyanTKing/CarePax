@@ -2,8 +2,8 @@ header#main-header {
   height: 5em;
   width: 100%;
   padding: 1em 0;
-  background: rgba($main, 0.6);
-  border-bottom: 0.125em solid $light;
+  background: rgba($main, 0.8);
+  border-bottom: 0.125em solid $main;
 
   div.container {
     height: 100%;
@@ -11,7 +11,7 @@ header#main-header {
     a#logo {
       float:left;;
       color: $light;
-      font: normal normal 100 2em $sans-serif;
+      font: normal normal 300 2em $sans-serif;
       letter-spacing: 0.1em;
       text-decoration: none !important;
       padding-top: 0.125em;
@@ -22,8 +22,20 @@ header#main-header {
       }
     }
 
-    ul {
+    ul li a {
+      font: normal normal 700 1em $sans-serif;
+      text-transform: uppercase;
+      border-bottom: 0.125em solid rgba($light, 0);
+      padding: 0;
+      margin: 1em;
+      @include transition(border-bottom, padding-bottom);
+      @include transition-duration(250ms);
+      color: $light;
 
+      &:hover {
+        border-bottom: 0.125em solid $light;
+        padding-bottom: 1em;
+      }
     }
   }
 }
