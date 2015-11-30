@@ -1,84 +1,41 @@
-nav.main-nav {
-  @extend .clearfix;
-  padding: 1em 3em;
+header#main-header {
+  height: 5em;
+  width: 100%;
+  padding: 1em 0;
+  background: rgba($main, 0.8);
+  border-bottom: 0.125em solid $main;
 
-  ul {
-    display: inline-block;
+  div.container {
+    height: 100%;
 
-    li {
-      display: inline-block;
-      text-align: center;
-      margin: 2em 4em 2em 0;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      a {
-        color: $light;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        padding-bottom: 0;
-        border-bottom: 0.125em solid rgba($light, 0);
-        @include transition(padding-bottom, border-bottom);
-        @include transition-duration(250ms);
-
-        &:hover {
-          border-bottom: 0.125em solid $light;
-          padding-bottom: 1em;
-        }
-      }
-    }
-  }
-
-  ul.page-nav {
-    max-width: 70%;
-    float: left;
-  }
-
-  ul.login-register {
-    max-width: 20%;
-    float: right;
-
-    a#login-button {
-      transition: none;
+    a#logo {
+      float:left;;
+      color: $light;
+      font: normal normal 300 2em $sans-serif;
+      letter-spacing: 0.1em;
+      text-decoration: none !important;
+      padding-top: 0.125em;
 
       &:hover {
+        text-decoration: none;
         border-bottom: none;
-        padding-bottom: none;
+      }
+    }
+
+    ul li a {
+      font: normal normal 700 1em $sans-serif;
+      text-transform: uppercase;
+      border-bottom: 0.125em solid rgba($light, 0);
+      padding: 0;
+      margin: 1em;
+      @include transition(border-bottom, padding-bottom);
+      @include transition-duration(250ms);
+      color: $light;
+
+      &:hover {
+        border-bottom: 0.125em solid $light;
+        padding-bottom: 1em;
       }
     }
   }
-}
-
-div#login-form {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bototm: 0;
-  z-index: 100;
-  text-align: center;
-
-  form {
-    position: absolute;
-    display: inline-block;
-    background-color: $mid;
-    padding: 3em;
-    border-radius: 1em;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-.blurred {
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
 }

@@ -1,36 +1,34 @@
-body {
-	background-color: $main;
+div#home-container {
+  @include fill-page();
+  @include linear-gradient(($main 7em, rgba($main, 0.2), $main));
+  background-image: image-url('home_bg1.jpg');
+  background-size: cover;
 
-	div#home-container {
-		@include fill-page();
-		@include linear-gradient(($main 7em, rgba($main, 0.2), $main));
+  div#login-form {
+    display: none;
+    right: 2em;
+    top: 5em;
+  }
 
-    div#login-form {
-        display: none;
-        right: 2em;
-        top: 5em;
+  div#info-container {
+    @include position('center-center', 0, -10%);
+    text-align: center;
+
+    h1 {
+      font-weight: 300;
+      font-style: italic;
+      color: $light;
+      margin-bottom: 6em;
     }
+  }
+}
 
-		div#info-container {
-			@include position('center-center', 0, -10%);
-			text-align: center;
+div#map-container {
+  @include fill-page();
+  z-index: -1;
 
-			h1 {
-				font-weight: 300;
-				font-style: italic;
-				color: $light;
-				margin-bottom: 6em;
-			}
-		}
-	}
-
-	div#map-container {
-		@include fill-page();
-		z-index: -1;
-
-		div#map {
-			width: 100%;
-			height: 100%;
-		}
-	}
+  div#map {
+    width: 100%;
+    height: 100%;
+  }
 }
