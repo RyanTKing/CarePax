@@ -1,41 +1,29 @@
 <% provide(:title, 'About') %>
-<div id="about-container">
-    <div id="aboutTitle-container">
-        <h1>Who we are</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>About CarePax</h1>
+      <p>CarePax is an elegant solution crafted around a simple idea; to make convenience products truly convenient. Our products are inventoried in our drivers' cars, and are drivin throughout the city 24/7. Simply log on to our platform to see all available drivers near you, and request a product in their inventory. Thats it! Within minutes the driver will show up at your door with the products you need. </p>
     </div>
-</div>
-<div id="aboutText-container">
-    <p>
-    	"CarePax is an elegant solution crafted around a simple idea; to make convenience products truly convenient. Our products are inventoried in our drivers' cars, and are drivin throughout the city 24/7. Simply log on to our platform to see all available drivers near you, and request a product in their inventory. Thats it! Within minutes the driver will show up at your door with the products you need."
-    </p>
-</div>
-<div id="teamTitle-container">
-    <h1>Meet the team</h1>
-</div>
-<div id="team-container">
-	<div>
-		<img src="Ryan.jpg" alt="Ryan King">
-		<h1>Ryan King</h1>
-	</div>
-
-	</br>
-
-	<div>
-		<img src="David.jpg" alt="David Monti">
-		<h1>David Monti</h1>
-	</div>
-
-	</br>
-
-	<div>
-		<img src="Brent.jpg" alt="Brent Zhang">
-		<h1>Brent Zhang</h1>
-	</div>
-
-	</br>
-
-	<div>
-		<img src="Kevin.jpg" alt="Kevin Leung">
-		<h1>Kevin Leung</h1>
-	</div>
-</div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Meet the team</h1>
+      <div>
+        <%= image_tag("Ryan.jpg") %>
+        <h2>Ryan King</h2>
+      </div>
+      <div>
+        <%= image_tag("David.jpg") %>
+        <h2>David Monti</h2>
+      </div>
+      <div>
+        <%= image_tag("Brent.jpg") %>
+        <h2>Brent Zhang</h2>
+      </div>
+      <div>
+        <%= image_tag("Kevin.jpg") %>
+        <h2>Kevin Leung</h2>
+      </div>
+    </div>
+  </div>
