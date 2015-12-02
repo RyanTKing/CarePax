@@ -1,8 +1,8 @@
 <% provide(:title, 'Order') %>
 
 <div id="map-container">
-  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
   <div id="map"></div>
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 </div>
 
 <script type="text/javascript">
@@ -53,13 +53,7 @@
       "featureType": "poi.park",
       "elementType": "geometry",
       "stylers": [{"color": "#2c5a71"}]
-    }],
-    {
-      name: 'Custom Style'
-    });
-
-    var customMapTypeId = 'custom_style';
-
+    }]);
 
     handler = Gmaps.build('Google');
     handler.buildMap({
@@ -82,6 +76,5 @@
       });
     handler.map.centerOn(marker);
     };
-
   }
 </script>
