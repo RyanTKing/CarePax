@@ -6,36 +6,60 @@
 </div>
 
 <script type="text/javascript">
-  var mapStyle = new google.maps.StyledMapType([{
-    "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [{"color": "#193341"}]
-  }, {"featureType": "landscape", "elementType": "geometry", "stylers": [{"color": "#2c5a71"}]}, {
-    "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [{"color": "#29768a"}, {"lightness": -37}]
-  }, {"featureType": "poi", "elementType": "geometry", "stylers": [{"color": "#406d80"}]}, {
-    "featureType": "transit",
-    "elementType": "geometry",
-    "stylers": [{"color": "#406d80"}]
-  }, {
-    "elementType": "labels.text.stroke",
-    "stylers": [{"visibility": "on"}, {"color": "#3e606f"}, {"weight": 2}, {"gamma": 0.84}]
-  }, {"elementType": "labels.text.fill", "stylers": [{"color": "#ffffff"}]}, {
-    "featureType": "administrative",
-    "elementType": "geometry",
-    "stylers": [{"weight": 0.6}, {"color": "#1a3541"}]
-  }, {"elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {
-    "featureType": "poi.park",
-    "elementType": "geometry",
-    "stylers": [{"color": "#2c5a71"}]
-  }];{
+  function initMap() {
+    var mapStyle = new google.maps.StyledMapType([
+    {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [{"color": "#193341"}]
+    },
+    {
+      "featureType": "landscape", 
+      "elementType": "geometry", 
+      "stylers": [{"color": "#2c5a71"}]
+    }, 
+    {
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [{"color": "#29768a"}, {"lightness": -37}]
+    },
+    {
+      "featureType": "poi", 
+      "elementType": "geometry", 
+      "stylers": [{"color": "#406d80"}]
+    }, 
+    {
+      "featureType": "transit",
+      "elementType": "geometry",
+      "stylers": [{"color": "#406d80"}]
+    },
+    {
+      "elementType": "labels.text.stroke",
+      "stylers": [{"visibility": "on"}, {"color": "#3e606f"}, {"weight": 2}, {"gamma": 0.84}]
+    }, 
+    {
+      "elementType": "labels.text.fill", 
+      "stylers": [{"color": "#ffffff"}]
+    }, 
+    {
+      "featureType": "administrative",
+      "elementType": "geometry",
+      "stylers": [{"weight": 0.6}, {"color": "#1a3541"}]
+    },
+    {
+      "elementType": "labels.icon", "stylers": [{"visibility": "off"}]
+    }, 
+    {
+      "featureType": "poi.park",
+      "elementType": "geometry",
+      "stylers": [{"color": "#2c5a71"}]
+    }],
+    {
       name: 'Custom Style'
-  });
+    });
 
-  var customMapTypeId = 'custom_style';
+    var customMapTypeId = 'custom_style';
 
-  function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -33.8688, lng: 151.2195},
       zoom: 13,
@@ -43,6 +67,8 @@
         mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
       }
     });
+    map.mapTypes.set(customMapTypeId, customMapType);
+    map.setMapTypeId(customMapTypeId);
 
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
