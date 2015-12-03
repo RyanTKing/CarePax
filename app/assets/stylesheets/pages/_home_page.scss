@@ -25,10 +25,11 @@ div#home-container {
 
 div#map-container {
   @include fill-page();
-  z-index: -1;
+  background: $main;
 
   div#map {
     width: 100%;
     height: 100%;
+    background: $main;
   }
 }
