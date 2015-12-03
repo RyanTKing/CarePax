@@ -1,2 +1,27 @@
-<h1>Users#new,</h1>
-<p>Find me in app/views/users/new,.html.erb</p>
+<%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.label :fname %>
+    <%= f.email_field :fname, class: 'form-control' %>
+
+    <%= f.label :lname %>
+    <%= f.email_field :lname, class: 'form-control' %>
+
+    <%= f.label :hometown %>
+    <%= f.email_field :hometown, class: 'form-control' %>
+
+    <%= f.label :gender %>
+    <%= f.email_field :gender, class: 'form-control' %>
+
+    <%= f.label :dob %>
+    <%= f.email_field :dob, class: 'form-control' %>
+    
+    <%= f.label :bio %>
+    <%= f.email_field :bio, class: 'form-control' %>
+​
+<%= f.submit "Sign Up!", class: "btn btn-primary" %>
+<% end %>
