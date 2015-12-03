@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202232735) do
+ActiveRecord::Schema.define(version: 20151202235413) do
 
   create_table "drivers", force: :cascade do |t|
     t.string   "plate"
@@ -20,6 +20,34 @@ ActiveRecord::Schema.define(version: 20151202232735) do
     t.integer  "year"
     t.string   "color"
     t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float    "total"
+    t.integer  "time"
+    t.integer  "rating"
+    t.string   "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.integer  "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
