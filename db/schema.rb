@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202223755) do
+ActiveRecord::Schema.define(version: 20151202232735) do
 
   create_table "drivers", force: :cascade do |t|
     t.string   "plate"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20151202223755) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "password"
     t.string   "fname"
     t.string   "lname"
     t.string   "hometown"
@@ -35,8 +34,9 @@ ActiveRecord::Schema.define(version: 20151202223755) do
     t.string   "bio"
     t.decimal  "lat"
     t.decimal  "lon"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end
