@@ -71,6 +71,14 @@ window.initMap = ->
     new google.maps.Size( 17, 17 )
   )
 
+  car = new google.maps.MarkerImage(
+    'http://cnsmaryland.org/interactives/Uber/uberXicon.png'
+    null,
+    null,
+    new google.maps.Point( 8, 8 )
+    new google.maps.Size( 30, 30 )
+  )
+
   userMarker = new (google.maps.Marker)(
     flat: true
     icon: blueDot
@@ -83,8 +91,14 @@ window.initMap = ->
     title: 'Your location'
   )
 
+  current =
+    lat: 42.350
+    lng: -71.108
+
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition ((position) ->
+      current.lat = position.coords.latitude
+      current.lng = position.coords.longitude
       pos =
         lat: position.coords.latitude
         lng: position.coords.longitude
@@ -102,6 +116,66 @@ window.initMap = ->
     map: null
     position: null
     draggable: true
+  )
+
+  cOneLocation = new (google.maps.LatLng)(current.lat+.0015, current.lng+.001)
+  carOne = new (google.maps.Marker)(
+    map: map
+    icon: car
+    visible: true
+    optimized: false
+    position: cOneLocation
+    title: 'Car One'
+  )
+
+  cTwoLocation = new (google.maps.LatLng)(current.lat-.0015, current.lng+.003)
+  carTwo = new (google.maps.Marker)(
+    map: map
+    icon: car
+    visible: true
+    optimized: false
+    position: cTwoLocation
+    title: 'Car Two'
+  )
+
+  cThreeLocation = new (google.maps.LatLng)(current.lat-.0001, current.lng-.003)
+  carThree= new (google.maps.Marker)(
+    map: map
+    icon: car
+    visible: true
+    optimized: false
+    position: cThreeLocation
+    title: 'Car Three'
+  )
+
+  cFourLocation = new (google.maps.LatLng)(current.lat-.003, current.lng+.005)
+  carFour= new (google.maps.Marker)(
+    map: map
+    icon: car
+    visible: true
+    optimized: false
+    position: cFourLocation
+    title: 'Car Four'
+  )
+
+  cFiveLocation = new (google.maps.LatLng)(current.lat+.00001, current.lng-.01)
+  carFive= new (google.maps.Marker)(
+    map: map
+    icon: car
+    visible: true
+    optimized: false
+    position: cFiveLocation
+    title: 'Car Five'
+  )
+
+  cSixLocation = new (google.maps.LatLng)(current.lat+.0003, current.lng+.003)
+  carSix = new (google.maps.Marker)(
+    map: map
+    icon: car
+    visible: true
+    optimized: false
+    position: cSixLocation
+    title: 'Car Six'
   )
 
   geocoder = new (google.maps.Geocoder)
