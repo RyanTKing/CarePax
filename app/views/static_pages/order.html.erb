@@ -1,9 +1,8 @@
 <% provide(:title, 'Order') %>
 
+<input id="pac-input" class="controls" type="text" placeholder="Choose a Different Location">
 <div id="map-container">
   <div id="map"></div>
 </div>
-
-<script type="text/javascript">
-  createMap('map');
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK15fSJUAnCidloXH9XwR9TV73ukZsyvI&libraries=places&callback=initMap"
+        async defer></script>
