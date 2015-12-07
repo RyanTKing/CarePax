@@ -2,8 +2,7 @@ header#main-header {
   height: 5em;
   width: 100%;
   padding: 1em 0;
-  background: rgba($main, 0.8);
-  border-bottom: 0.125em solid $main;
+  background: $main;
 
   div.container {
     height: 100%;
@@ -35,6 +34,7 @@ header#main-header {
       &:hover {
         border-bottom: 0.125em solid $light;
         padding-bottom: 1em;
+        background: none;
       }
     }
   }

@@ -1,4 +1,4 @@
-<header id="main-header" class="navbar navbar-fixed-top navbar-inverse">
+<header id="main-header" class="navbar navbar-fixed-top">
   <div class="container">
     <%= link_to 'care pax', root_path, id: 'logo'%>
     <ul class="nav navbar-nav navbar-right">
@@ -6,16 +6,7 @@
       <li><%= link_to 'About', about_path %></li>
       <li><%= link_to 'Order', order_path %></li>
       <li><%= link_to 'Help', '#' %></li>
-      <li><%= link_to 'Log in', '#' %></li>
+      <li><a class="login" href="#0">Login</a></li>
     </ul>
   </div>
 </header>
-<script>
-//   $(document).ready(function() {
-//     $("#login-form").hide();
-//     $('#login-button').click(function(e) {
-//       e.preventDefault();
-//       $('#login-form').toggle('slow');
-//     });
-//   });
-// </script>

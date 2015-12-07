@@ -1,0 +1,109 @@
+div.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000;
+    overflow-y: auto;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    @include transition(opacity, visibility);
+    @include transition-duration(300ms);
+    text-align: center;
+
+    &.is-visible {
+        visibility: visible;
+        opacity: 1;
+
+        .popup-container {
+            @include transform(translateY(0));
+        }
+    }
+}
+
+.popup-container {
+    text-align: left;
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background: $light;
+    margin: 3em auto 4em;
+    cursor: auto;
+    border-radius: 0.5em;
+
+    @include transition-property (transform);
+    @include transition-duration(.3s);
+
+    .popup-switcher {
+        @include clearfix();
+
+        li {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            margin-right: -4px;
+
+            &:first-child a {
+                border-radius: 0.5em 0 0 0;
+            }
+
+            &:last-child a {
+                border-radius: 0 0.5em 0 0;
+            }
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            padding: 0.5em 0;
+            line-height: 50px;
+            background: darken($light, 20%);
+            color: darken($light, 60%);
+
+            &:hover {
+                text-decoration: none;
+                color: darken($light, 60%);
+            }
+
+            &.selected {
+                background: $light;
+                color: $main;
+
+                &:hover {
+                    color: $main;
+                }
+            }
+        }
+    }
+}
+
+.popup-login, .popup-register {
+    display: none;
+}
+
+.popup-login.is-selected, .popup-register.is-selected {
+    display: block;
+}
+
+div.blurred {
+    -o-filter: blur(20px);
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(42px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}
+
+p.popup-close {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: -2em;
+
+    a {
+        color: $light;
+        text-decoration: underline;
+    }
+}

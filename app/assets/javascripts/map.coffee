@@ -42,7 +42,7 @@ window.initMap = ->
       'featureType': 'water'
       'elementType': 'all'
       'stylers': [
-        { 'color': '#46bcec' }
+        { 'color': '#3498DB' }
         { 'visibility': 'on' }
       ]
     }

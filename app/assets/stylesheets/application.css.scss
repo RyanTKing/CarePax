@@ -4,6 +4,7 @@
 
 /* Libraries */
 @import "compass";
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -20,6 +21,7 @@
 @import "components/buttons";
 @import "components/forms";
 @import "components/navigation";
+@import "components/popup";
 
 /* Page Configuration */
 @import "pages/home_page";

@@ -9,10 +9,13 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
+<%= render 'layouts/popup' %>
+  <div id="page">
 <%= render 'layouts/header' %>
 <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 <%= yield %>
+  </div>
 </body>
 </html>

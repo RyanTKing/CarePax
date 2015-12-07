@@ -1,61 +1,161 @@
 form {
-    * {
-        outline: none;
-    }
+    padding: 2em;
 
-    div.text-input {
-        display: block;
-        height: 3em;
+    fieldset {
+        margin: 2em 0;
+        position: relative;
 
-        i {
-            display: inline-block;
-            height: 1em;
-            width: 1em;
-            padding: 0.5em;
-            font-size: 1.5em;
-            background-color: $main;
-            color: $light;
-            text-align: center;
-            border-top-left-radius: 0.5em;
-            border-bottom-left-radius: 0.5em;
+        &:first-of-type {
+            margin-top: 0 !important;
         }
 
-        input {
-            display: inline-block;
-            font-size: 1.5em;
-            height: 2em;
-            vertical-align: top;
-            margin: 0;
-            padding: 0 0.5em;
-            border-top-right-radius: 0.5em;
-            border-bottom-right-radius: 0.5em;
-            border-style: none;
+        &:last-of-type {
+            margin-bottom: 0 !important;
+        }
 
-            &[type="password"] {
-                margin: auto -1.75em auto -4px;
-                padding-right: 2.5px;
+        label.icon {
+            position: absolute;
+            top: 50%;
+            margin: 0 0.75em;
+            color: darken($light, 20%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            transform: translateY(-50%);
+            font-size: 1.5em;
+
+            &.dropdown-icon {
+                color: $main;
+                top: calc(0.75em + 50%);
+                right: 0;
             }
         }
 
-        button {
+        
+        label.checkbox {
+            margin: 0;
+            display: inline-block;
+        }
+
+        legend {
+            margin-bottom: 1em;
+        }
+
+        a.password-toggle {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            transform: translateY(-50%);
+            right: 0;
+            color: $main;
+            padding: 0.25em 0.75em;
+            border-left: 1px solid darken($light, 20%);
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        input[type='text'], input[type='email'], input[type='password'], select, textarea {
+            width: 100%;
+            border: 1px solid darken($light, 20%);
             -webkit-appearance: none;
+            -moz-appearance: none;
             appearance: none;
-            border: none;
-            background: none;
-            padding: 0;
-            margin: 0;
-            font-size: 1em;
+            outline: none;
+            font-family: $sans-serif;
+            height: auto;
+            padding: 1em 5.5em 1em 4em;
+            border-radius: 0.5em;
 
-            i {
-                border-radius: 0;
-                border-top-right-radius: 0.5em;
-                border-bottom-right-radius: 0.5em;
-                background-color: $accent;
+            &:focus {
+                border: 1px solid $main;
             }
         }
 
-        &:first-child {
-            margin-bottom: 2em;
+        input[type='checkbox'] {
+            margin: 0;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+            padding: 1em 4em 1em 1em;
+        }
+
+        textarea {
+            resize: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+            padding: 1em;
+        }
+
+        input[type='submit'] {
+            border-radius: 0.5em;
+            width: 100%;
+            background-color: $dark;
+            padding: 1em;
+            color: $light;
+            font-weight: 700;
+            border: none;
+
+            &:hover {
+                background-color: $mid;
+                border: none;
+            }
+        }
+
+        &.date {
+            label:first-of-type {
+                right: 67%;
+            }
+
+            label:nth-of-type(2) {
+                right: 33%;
+            }
+
+            label:last-of-type {
+                right: 0%;
+            }
+
+            select {
+                display: inline-block;
+                margin-right: 1em;
+                padding: 1em;
+                width: calc(33% - 0.67em);
+
+                &:last-of-type {
+                    float: right;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        span.error-message {
+            color: $accent;
+            font-size: 0.8em;
+            display: block;
+            width: 100%;
+            margin-bottom: -1em;
+            line-height: 1.5em;
+        }
+
+        &.error {
+            input {
+                border: 1px solid $accent;
+                color: $accent;
+
+                &:focus {
+                    border: 1px solid $accent;
+                }
+            }
+
+            label {
+                color: $accent;
+            }
         }
     }
 }

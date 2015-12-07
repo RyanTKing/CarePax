@@ -1,0 +1,93 @@
+<div class="popup">
+  <div class="popup-container">
+    <ul class="popup-switcher">
+      <li><a href="#0">Login</a></li>
+      <li><a href="#0">Register</a></li>
+    </ul>
+
+    <div class="popup-login">
+      <%= form_for(:session, url: login_path) do |f| %>
+          <%= field_set_tag do %>
+              <%= f.label :email, class: 'icon' do fa_icon 'envelope-o' end %>
+              <%= f.email_field :email, :required => true %>
+          <% end %>
+
+          <%= field_set_tag do %>
+              <%= f.label :password, class: 'icon' do fa_icon 'key' end %>
+              <%= f.password_field :password, :required => true %>
+              <%= link_to 'Show', '#0', class: 'password-toggle' %>
+          <% end %>
+
+          <%= field_set_tag do %>
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me, class: 'checkbox inline' %>
+          <% end %>
+
+          <%= field_set_tag do %>
+              <%= f.submit 'Login', class: 'btn btn-primary' %>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="popup-register">
+        <%= form_for(:session, url: login_path) do |f| %>
+            <%= field_set_tag do %>
+                <%= f.label :name, class: 'icon' do fa_icon 'user' end %>
+                <%= f.text_field :name, :required => true, placeholder: 'Full Name' %>
+                <span id="email_errors" class="error-message">Name invalid</span>
+            <% end %>
+
+            <%= field_set_tag do %>
+                <%= f.label :email, class: 'icon' do fa_icon 'envelope-o' end %>
+                <%= f.email_field :email, :required => true, placeholder: 'Email' %>
+            <% end %>
+
+            <%= field_set_tag do %>
+                <%= f.label :password, class: 'icon' do fa_icon 'key' end %>
+                <%= f.password_field :password, :required => true, placeholder: 'Password' %>
+            <% end %>
+
+            <%= field_set_tag do %>
+                <%= f.label :password, class: 'icon' do fa_icon 'key' end %>
+                <%= f.password_field :password_confirm, :required => true, placeholder: 'Confirm Password' %>
+            <% end %>
+
+            <%= field_set_tag do %>
+                <%= f.label :city, class: 'icon' do fa_icon 'home' end %>
+                <%= f.text_field :city, placeholder: 'Current City' %>
+            <% end %>
+
+            <%= field_set_tag 'Gender' do %>
+                <%= f.label :gender, class: 'icon dropdown-icon' do fa_icon 'caret-down' end %>
+                <%= f.select :gender do %>
+                    <% options = [[],
+                        ['Male', 'male'],
+                        ['Female', 'female'],
+                        ['Other', 'other']
+                    ] %>
+                    <% options.each do |c| -%>
+                        <%= content_tag :option, c.first, value: c.last %>
+                    <% end %>
+                <% end %>
+            <% end %>
+
+            <%= field_set_tag 'Birthdate', class: 'date' do %>
+                <%= f.label :dob, class: 'icon dropdown-icon' do fa_icon 'caret-down' end %>
+                <%= f.label :dob, class: 'icon dropdown-icon' do fa_icon 'caret-down' end %>
+                <%= f.label :dob, class: 'icon dropdown-icon' do fa_icon 'caret-down' end %>
+                <%= f.date_select :dob, :start_year => 1900, :end_year => 2015, include_blank: true %>
+            <% end %>
+
+            <%= field_set_tag do %>
+                <%= f.text_area :bio, :rows => 6, placeholder: 'Bio' %>
+            <% end %>
+
+            <%= field_set_tag do %>
+                <%= f.submit "Register", class: "btn btn-primary" %>
+            <% end %>
+        <% end %>
+    </div>
+    <p class='popup-close'>
+        <%= link_to 'Close', '#0' %>
+    </p>
+  </div>
+</div>
