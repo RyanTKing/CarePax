@@ -66,12 +66,16 @@ form {
             outline: none;
             font-family: $sans-serif;
             height: auto;
-            padding: 1em 5.5em 1em 4em;
+            padding: 1em 1em 1em 4em;
             border-radius: 0.5em;
 
             &:focus {
                 border: 1px solid $main;
             }
+        }
+
+        input.login-password {
+            padding-right: 5.5em;
         }
 
         input[type='checkbox'] {
@@ -137,10 +141,12 @@ form {
         span.error-message {
             color: $accent;
             font-size: 0.8em;
-            display: block;
+            display: inline-block;
+            visibility: hidden;
             width: 100%;
-            margin-bottom: -1em;
-            line-height: 1.5em;
+            position: absolute;
+            left: 0;
+            top: 100%;
         }
 
         &.error {

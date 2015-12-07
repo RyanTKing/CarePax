@@ -14,7 +14,7 @@
 
           <%= field_set_tag do %>
               <%= f.label :password, class: 'icon' do fa_icon 'key' end %>
-              <%= f.password_field :password, :required => true %>
+              <%= f.password_field :password, :required => true, class: 'login-password' %>
               <%= link_to 'Show', '#0', class: 'password-toggle' %>
           <% end %>
 
@@ -29,26 +29,29 @@
       <% end %>
     </div>
     <div class="popup-register">
-        <%= form_for(:session, url: login_path) do |f| %>
+        <%= form_for(:user, url: registration_path) do |f| %>
             <%= field_set_tag do %>
                 <%= f.label :name, class: 'icon' do fa_icon 'user' end %>
                 <%= f.text_field :name, :required => true, placeholder: 'Full Name' %>
-                <span id="email_errors" class="error-message">Name invalid</span>
+                <span id="name_errors" class="error-message">Invalid name.</span>
             <% end %>
 
             <%= field_set_tag do %>
                 <%= f.label :email, class: 'icon' do fa_icon 'envelope-o' end %>
                 <%= f.email_field :email, :required => true, placeholder: 'Email' %>
+                <span id="email_errors" class="error-message">Invalid email.</span>
             <% end %>
 
             <%= field_set_tag do %>
                 <%= f.label :password, class: 'icon' do fa_icon 'key' end %>
                 <%= f.password_field :password, :required => true, placeholder: 'Password' %>
+                <span id="password_errors" class="error-message">Invalid Passowrd. (Must contain at least 8 characters containaing at least 1 lowercase and 1 uppercase).</span>
             <% end %>
 
             <%= field_set_tag do %>
-                <%= f.label :password, class: 'icon' do fa_icon 'key' end %>
+                <%= f.label :password_confirm, class: 'icon' do fa_icon 'key' end %>
                 <%= f.password_field :password_confirm, :required => true, placeholder: 'Confirm Password' %>
+                <span id="confirm_password_errors" class="error-message">Passwords don't match.</span>
             <% end %>
 
             <%= field_set_tag do %>
@@ -82,7 +85,7 @@
             <% end %>
 
             <%= field_set_tag do %>
-                <%= f.submit "Register", class: "btn btn-primary" %>
+                <%= f.submit "Register", id: 'user_submit', class: "btn btn-primary" %>
             <% end %>
         <% end %>
     </div>
