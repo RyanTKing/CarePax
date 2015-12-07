@@ -1,41 +1,79 @@
 header#main-header {
-  height: 5em;
-  width: 100%;
-  padding: 1em 0;
-  background: $main;
+    height: 5em;
+    width: 100%;
+    padding: 1em 0;
+    background: $main;
 
-  div.container {
-    height: 100%;
+    div.container {
+        height: 100%;
+        text-align: center;
 
-    a#logo {
-      float:left;;
-      color: $light;
-      font: normal normal 300 2em $sans-serif;
-      letter-spacing: 0.1em;
-      text-decoration: none !important;
-      padding-top: 0.125em;
+        a#logo {
+            display: inline-block;
+            color: $light;
+            font: normal normal 300 2em $sans-serif;
+            letter-spacing: 0.1em;
+            text-decoration: none !important;
+            padding-top: 0.125em;
 
-      &:hover {
-        text-decoration: none;
-        border-bottom: none;
-      }
+            &:hover {
+                text-decoration: none;
+                border-bottom: none;
+            }
+        }
+
+        ul.navbar-left li a {
+            font: normal normal 500 1em $sans-serif;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            border-bottom: 0.125em solid rgba($light, 0);
+            padding: 0;
+            margin: 1em;
+            @include transition(border-bottom, padding-bottom);
+            @include transition-duration(250ms);
+            color: $light;
+
+            &:hover {
+                border-bottom: 0.125em solid $light;
+                padding-bottom: 0.5em;
+                background: none;
+            }
+        }
+
+        ul.navbar-right li {
+            p {
+                color: $light;
+                font: normal normal 300 1em $sans-serif;
+                margin: 1em 2em 1em 0;
+            }
+
+            a {
+                font: normal normal 300 1em $sans-serif;
+                border-radius: 2em;
+                padding: 0.75em 1.5em;
+                margin: 0.25em 0;
+                color: $light;
+                border: 1px solid $light;
+
+                &:hover {
+                    color: $main;
+                    background-color: $light;
+                }
+
+                &.login {
+                    margin-right: 2em;
+                }
+
+                &.register {
+                    background-color: $dark;
+                    border: none;
+
+                    &:hover {
+                        color: $light;
+                        background-color: $mid;
+                    }
+                }
+            }
+        }
     }
-
-    ul li a {
-      font: normal normal 700 1em $sans-serif;
-      text-transform: uppercase;
-      border-bottom: 0.125em solid rgba($light, 0);
-      padding: 0;
-      margin: 1em;
-      @include transition(border-bottom, padding-bottom);
-      @include transition-duration(250ms);
-      color: $light;
-
-      &:hover {
-        border-bottom: 0.125em solid $light;
-        padding-bottom: 1em;
-        background: none;
-      }
-    }
-  }
 }

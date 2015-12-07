@@ -164,4 +164,26 @@ form {
             }
         }
     }
+
+    p.failed-login {
+        display: none;
+        color: red;
+        margin-bottom: 2em;
+    }
+
+    div.error-messages {
+        display: none;
+        color: red;
+        margin-bottom: 2em;
+
+        p {
+            margin-bottom: 0.5em;
+        }
+
+        ul {
+            list-style: disc;
+            list-style-position: inside;
+            margin-left: 1em;
+        }
+    }
 }

@@ -1,0 +1,22 @@
+<%= form_for(:session, url: login_path) do |f| %>
+    <p class="failed-login">The email/password combination you entered does not exist</p>
+    <%= field_set_tag do %>
+        <%= f.label :email, class: 'icon' do fa_icon 'envelope-o' end %>
+        <%= f.email_field :email, :required => true %>
+    <% end %>
+
+    <%= field_set_tag do %>
+        <%= f.label :password, class: 'icon' do fa_icon 'key' end %>
+        <%= f.password_field :password, :required => true, class: 'login-password' %>
+        <%= link_to 'Show', '#0', class: 'password-toggle' %>
+    <% end %>
+
+    <%= field_set_tag do %>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, class: 'checkbox inline' %>
+    <% end %>
+
+    <%= field_set_tag do %>
+        <%= f.submit 'Login', class: 'btn btn-primary' %>
+    <% end %>
+<% end %>

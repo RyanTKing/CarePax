@@ -15,6 +15,4 @@
 //= require turbolinks
 //= require underscore-min
 //= require typekit
-//= require map
-//= require popup
 //= require_tree .

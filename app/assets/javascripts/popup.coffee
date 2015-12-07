@@ -1,29 +1,29 @@
 ready = ->
   formModal = $('.popup')
   formLogin = formModal.find('.popup-login')
-  formSignup = formModal.find('.popup-register')
+  formRegister = formModal.find('.popup-register')
   formModalTab = $('.popup-switcher')
   tabLogin = formModalTab.children('li').eq(0).children('a')
-  tabSignup = formModalTab.children('li').eq(1).children('a')
+  tabRegister = formModalTab.children('li').eq(1).children('a')
   page = $('#page')
   mainNav = $('#main-header')
 
   login_selected = ->
     formModal.addClass 'is-visible'
     formLogin.addClass 'is-selected'
-    formSignup.removeClass 'is-selected'
+    formRegister.removeClass 'is-selected'
     tabLogin.addClass 'selected'
-    tabSignup.removeClass 'selected'
+    tabRegister.removeClass 'selected'
     page.addClass 'blurred'
     return
 
-  signup_selected = ->
+  register_selected = ->
     mainNav.children('ul').removeClass 'is-visible'
     formModal.addClass 'is-visible'
     formLogin.removeClass 'is-selected'
-    formSignup.addClass 'is-selected'
+    formRegister.addClass 'is-selected'
     tabLogin.removeClass 'selected'
-    tabSignup.addClass 'selected'
+    tabRegister.addClass 'selected'
     page.addClass 'blurred'
     return
 
@@ -32,6 +32,8 @@ ready = ->
     return
 
   mainNav.on 'click', '.login', login_selected
+
+  mainNav.on 'click', '.register', register_selected
 
   formModal.on 'click', (event) ->
     if $(event.target).is(formModal) or $(event.target).is('.popup-close')
@@ -47,7 +49,7 @@ ready = ->
 
   formModalTab.on 'click', (event) ->
     event.preventDefault()
-    if $(event.target).is(tabLogin) then login_selected() else signup_selected()
+    if $(event.target).is(tabLogin) then login_selected() else register_selected()
     return
 
   $('.password-toggle').on 'click', ->

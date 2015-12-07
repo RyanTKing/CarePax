@@ -1,12 +1,19 @@
 <header id="main-header" class="navbar navbar-fixed-top">
   <div class="container">
-    <%= link_to 'care pax', root_path, id: 'logo'%>
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to 'About', about_path %></li>
+    <ul class="nav navbar-nav navbar-left">
       <li><%= link_to 'Order', order_path %></li>
+      <li><%= link_to 'About', about_path %></li>
       <li><%= link_to 'Help', '#' %></li>
-      <li><a class="login" href="#0">Login</a></li>
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+            <li><p>Welcome, <%= current_user.name.split(/\W+/)[0] %></p></li>
+            <li><%= link_to 'Logout', logout_path, method: 'delete' %></li>
+        <% else %>
+            <li><a class="login" href="#0">Login</a></li>
+            <li><a class="register" href="#0">Register</a></li>
+        <% end %>
+    </ul>
+    <%= link_to 'care pax', root_path, id: 'logo' %>
   </div>
 </header>

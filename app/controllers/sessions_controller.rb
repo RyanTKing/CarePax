@@ -1,16 +1,17 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
+
   def new
   end
 
   def create
-    user = User.find_by(email: paramas[:session][:email].downcase)
-    if user && user.authentication(params[:session][:password])
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
+      render :json => {:success => [order_path]}
     else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      render :json => {:failed_login => ['Login failed']}
     end
   end
 
