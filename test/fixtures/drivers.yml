@@ -5,33 +5,9 @@ one:
   make: MyString
   model: MyString
   year: 1
-  color: MyString
-  status: MyString
-  email: MyString
-  password: MyString
-  fname: MyString
-  lname: MyString
-  hometown: MyString
-  gender: MyString
-  dob: 2015-12-04
-  bio: MyString
-  lat: 9.99
-  lng: 9.99
 
 two:
   plate: MyString
   make: MyString
   model: MyString
   year: 1
-  color: MyString
-  status: MyString
-  email: MyString
-  password: MyString
-  fname: MyString
-  lname: MyString
-  hometown: MyString
-  gender: MyString
-  dob: 2015-12-04
-  bio: MyString
-  lat: 9.99
-  lng: 9.99

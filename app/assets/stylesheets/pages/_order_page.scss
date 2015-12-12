@@ -1,64 +1,141 @@
 @-moz-keyframes pulsate {
-  from {
-    -moz-transform: scale(0.3);
-    opacity: 1.0;
-  }
-  95% {
-    -moz-transform: scale(1);
-    opacity: 0;
-  }
-  to {
-    -moz-transform: scale(0.35);
-    opacity: 0;
-  }
+    from {
+        -moz-transform: scale(0.3);
+        opacity: 1.0;
+    }
+    95% {
+        -moz-transform: scale(1);
+        opacity: 0;
+    }
+    to {
+        -moz-transform: scale(0.35);
+        opacity: 0;
+    }
 }
 @-webkit-keyframes pulsate {
-  from {
-    -webkit-transform: scale(0.3);
-    opacity: 1.0;
-  }
-  95% {
-    -webkit-transform: scale(1);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: scale(0.35);
-    opacity: 0;
-  }
+    from {
+        -webkit-transform: scale(0.3);
+        opacity: 1.0;
+    }
+    95% {
+        -webkit-transform: scale(1);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: scale(0.35);
+        opacity: 0;
+    }
 }
 
 #map div.gmnoprint[title="Your location"] {
-  -moz-animation: pulsate 1s ease-in-out infinite;
-  -webkit-animation: pulsate 1s ease-in-out infinite;
-  -moz-border-radius:51px;
-  -webkit-border-radius:51px;
-  border-radius:51px;
-  -moz-box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
-  -webkit-box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
-  box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
-  height:51px!important;
-  margin:-17px 0 0 -17px !important;
-  width:51px!important;
+    -moz-animation: pulsate 1s ease-in-out infinite;
+    -webkit-animation: pulsate 1s ease-in-out infinite;
+    -moz-border-radius:51px;
+    -webkit-border-radius:51px;
+    border-radius:51px;
+    -moz-box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
+    -webkit-box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
+    box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
+    height:51px!important;
+    margin:-17px 0 0 -17px !important;
+    width:51px!important;
 }
 
 #map div.gmnoprint[title="Your location"] img {
-  display:none;
+    display:none;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (device-width: 768px) {
-  #map div.gmnoprint[title="Your location"] {
-    margin:-10px 0 0 -10px;
-  }
+    #map div.gmnoprint[title="Your location"] {
+        margin:-10px 0 0 -10px;
+    }
 }
 
 #pac-input {
-  font-size: 1.5em;
-  font-family: $sans-serif;
-  width: calc(100% - 9.6em);
-  margin: 7em 4.8em 0 4.8em;
-  padding: 0.75em 1em;
+    position: fixed;
+    top: 7em;
+    left: 5em;
+    font-size: 1.5em;
+    font-family: $sans-serif;
+    width: 25%;
+    max-width: 600px;
+    padding: 0.75em 1em;
 
-  &:focus {
-    outline: none;
-  }
+    &:focus {
+        outline: none;
+    }
+}
+
+#order-form {
+    position: fixed;
+    display: none;
+    top: 5em;
+    right: 0;
+    width: 25%;
+    max-width: 600px;
+    height: 100%;
+    z-index: 10;
+    padding: 2em;
+    background-color: $light;
+
+    img.driver-photo {
+        width: 100%;
+    }
+
+    h1.name {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    div.driver-info {
+        position: relative;
+
+        p {
+            padding-left: 2em;
+
+            strong {
+                font-weight: 700;
+            }
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    }
+
+    button.order {
+        width: 100%;
+        height: 3em;
+        color: $light;
+        border: none;
+        border-style: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: $dark;
+        border-radius: 0.5em;
+
+        &:hover {
+            color: $light;
+            background-color: $mid;
+        }
+    }
+
+    div.order-close {
+        width: 100%;
+        text-align: center;
+        a {
+            font: normal normal 500 1em $sans-serif;
+            color: $mid;
+            text-decoration: underline;
+
+            &:hover {
+                color: $mid;
+            }
+        }
+    }
 }

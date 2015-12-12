@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  total: 1.5
-  time: 1
-  rating: 1
-  review: MyString
+  total: 9.99
 
 two:
-  total: 1.5
-  time: 1
-  rating: 1
-  review: MyString
+  total: 9.99

@@ -1,6 +1,5 @@
 div#home-container {
   @include fill-page();
-  @include linear-gradient(($main 7em, rgba($main, 0.2), $main));
   background-image: image-url('home_bg1.jpg');
   background-size: cover;
 
