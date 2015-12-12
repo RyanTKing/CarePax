@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase}
-  VALID_NAME_REGEX = /\A[A-Z](\-|[a-zA-Z])*\s[A-Z](\-|[a-zA-Z])*\z/i
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PASSWORD_REGEX= /\A(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]*\z/i
+  VALID_NAME_REGEX = /[A-Z](\-|[a-zA-Z])*\s[A-Z](\-|[a-zA-Z])*/
+  VALID_EMAIL_REGEX = /[\w+\-.]+@[a-z\d\-.]+\.[a-z]+/i
+  VALID_PASSWORD_REGEX= /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]*/i
   validates :name, presence: true, length: { maximum: 71},
     format: { with: VALID_NAME_REGEX }
   validates :email, presence: true, length: { maximum: 255},
